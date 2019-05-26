@@ -1,0 +1,603 @@
+body {
+    background-image: url("http://www.sanshi30.cn/static/images/bg2.png") /*tpa=http://www.sanshi30.cn/static/images/bg2.png*/;
+    color: #444;
+    cursor: url("../userImages/huaji.png") /*tpa=http://www.sanshi30.cn/static/userImages/huaji.png*/, auto
+}
+.layadmin-iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 65px;
+    right: 0;
+    bottom: 0;
+}
+.layui-btn-mini2 {
+    height: 22px;
+    line-height: 22px;
+    padding: 0 5px;
+    font-size: 12px
+}
+
+.shadow {
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .1);
+    border-radius: 1px
+}
+
+.clear {
+    clear: both
+}
+
+.blog-body {
+    margin-top: 75px
+}
+
+.blog-container {
+    padding: 1px 15px
+}
+
+.blog-body > .blog-container {
+    -moz-box-shadow: 0 0 10px 2px #666;
+    -webkit-box-shadow: 0 0 10px 2px #666;
+    margin-top: -21px;
+    box-shadow: 0 0 10px 2px #666;
+    padding-top: 10px;
+    background-color: #eee;
+    min-height: 700px
+}
+
+@media (min-width: 768px) .layui-container {
+    padding: 0 15px;
+}
+
+    .blog-main {
+        margin-top: 65px;
+        width: 100%;
+        position: relative;
+    }
+
+    .blog-main > .home-tips {
+        padding: 10px 10px;
+        background: #fff;
+        font-size: 13px;
+        margin-bottom: 15px;
+    }
+
+    .blog-main > .home-tips > i {
+        color: #009688;
+        font-size: 15px;
+    }
+
+    .blog-main > .home-tips > .home-tips-container {
+        margin-left: 20px;
+        height: 17px;
+        overflow: hidden;
+    }
+
+    .blog-main > .home-tips > .home-tips-container > span {
+        display: block;
+    }
+
+    .blog-main > .blog-main-left {
+        width: 100%;
+        float: left;
+    }
+
+    .blog-main > .blog-main-right {
+        width: 100%;
+        float: right;
+    }
+
+    .blog-nav-two {
+        background-color: #fff;
+        padding: 0 10px;
+        line-height: 40px;
+        height: 40px;
+        text-align: center;
+        border: 1px solid #ddd;
+        margin-bottom: 10px;
+    }
+
+    .blog-nav-two .layui-breadcrumb a:hover, .blog-nav-two .layui-breadcrumb .selected {
+        color: #1e9fff !important;
+    }
+
+    .layui-breadcrumb > * {
+        font-size: 14px;
+    }
+
+    .layui-breadcrumb a {
+        color: #999 !important;
+    }
+
+    .blog-nav-two .layui-breadcrumb a span:hover, .blog-nav-two .layui-breadcrumb .selected span {
+        border-bottom: 3px solid #01aaed;
+    }
+
+    .blog-nav-two .layui-breadcrumb a span {
+        display: inline-block;
+        padding: 0 0px;
+        line-height: 33px;
+    }
+
+    @media (min-width: 768px) {
+        .blog-container {
+            width: 729px;
+            margin: 0 auto
+        }
+
+        .blog-main > .blog-main-right > .blog-module {
+            width: 45%;
+            margin-bottom: 15px
+        }
+
+        .blog-main > .blog-main-right > .blog-module:nth-child(odd) {
+            float: left;
+            clear: left
+        }
+
+        .blog-main > .blog-main-right > .blog-module:nth-child(odd).blog-module:last-child {
+            width: auto;
+            float: none;
+            clear: both
+        }
+
+        .blog-main > .blog-main-right > .blog-module:nth-child(even) {
+            float: right;
+            clear: right
+        }
+    }@media (min-width: 992px) {
+    .blog-container {
+        width: 949px
+    }
+
+    .blog-main > .blog-main-left {
+        width: 66%
+    }
+
+    .blog-main > .blog-main-right {
+        width: 32%
+    }
+
+    .blog-main > .blog-main-right > .blog-module {
+        width: auto;
+        float: none !important
+    }
+}@media (min-width: 1200px) {
+    .blog-container {
+        width: 1130px
+    }
+}.sitemap {
+     background: #fff;
+     margin-top: 14px;
+     padding: 5px 15px;
+     line-height: normal;
+     border-radius: 0 !important
+ }
+
+    .sitemap a {
+        font-size: 12px
+    }
+
+    @media (min-width: 768px) {
+        .sitemap {
+            padding: 6px 15px
+        }
+
+        .sitemap a {
+            font-size: 13px
+        }
+    }@media (min-width: 992px) {
+    .sitemap {
+        padding: 8px 15px
+    }
+
+    .sitemap a {
+        font-size: 14px
+    }
+}.blog-nav {
+     width: 100%;
+     height: 64px;
+     position: fixed;
+     top: 0;
+     background-color: #393d49;
+     border-bottom: 1px solid #5fb878;
+     z-index:10000;
+ }
+
+    .blog-nav .layui-nav {
+        position: absolute;
+        top: 0;
+        left: 2%;
+        width: 100%;
+        background: 0 0;
+        display: none;
+        text-align: center
+    }
+
+    .blog-nav .layui-nav .layui-nav-item {
+        line-height: 64px;
+        margin: 0 5px
+    }
+
+    .blog-nav .layui-nav .layui-nav-item a {
+        padding: 0 15px
+    }
+
+    .blog-nav .blog-user {
+        line-height: 64px;
+        position: absolute;
+        z-index: 10
+    }
+
+    .blog-nav .blog-container .blog-user .fa-qq {
+        line-height: 64px;
+        font-size: 24px;
+        color: #c2c2c2
+    }
+
+    .blog-nav .blog-user a:nth-child(2) {
+        display: none
+    }
+
+    .blog-nav .blog-user a:nth-child(3) {
+        display: none
+    }
+
+    .blog-nav .blog-user .fa-user-circle-o {
+        line-height: 72px;
+        font-size: 36px;
+        color: #c2c2c2
+    }
+
+    .blog-nav .blog-user .fa-cog, .blog-nav .blog-user .fa-sign-out {
+        line-height: 72px;
+        font-size: 24px;
+        color: #c2c2c2
+    }
+
+    .blog-nav .blog-user .fa-user-circle-o:hover, .blog-nav .blog-user a:hover, .blog-nav .fa-cog:hover, .blog-nav .fa-sign-out:hover {
+        color: #fff;
+        cursor: pointer
+    }
+
+    .blog-nav .blog-user img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50px
+    }
+
+    .blog-nav .blog-user img:hover {
+        opacity: .5
+    }
+
+    .blog-nav .blog-user .fa-qq:hover {
+        color: #fff
+    }
+
+    @font-face {
+        font-family: damu;
+        src: url("BROADW.TTF")/*tpa=http://www.sanshi30.cn/static/css/BROADW.TTF*/
+    }.blog-nav .blog-logo {
+         position: absolute;
+         top: 0;
+         left: 25%;
+         width: 50%;
+         text-align: center;
+         margin: 0 auto;
+         line-height: 64px;
+         font-size: 30px;
+         font-family: damu;
+         color: #fff;
+         font-weight: 700;
+         display: inline-block;
+         z-index: 10
+     }
+
+    .blog-nav .blog-navicon {
+        position: absolute;
+        right: 0;
+        padding: 10px 12px;
+        color: #fff;
+        border: 1px solid #009688;
+        margin-top: 13px
+    }
+
+    .blog-nav .blog-navicon:hover {
+        border: 1px solid #5fb878
+    }
+
+    .blog-container {
+        margin: 0 auto;
+        position: relative
+    }
+
+    @media (min-width: 992px) {
+        .blog-nav .layui-nav {
+            display: block
+        }
+
+        .blog-nav .blog-user {
+            right: 0
+        }
+
+        .blog-nav .blog-logo {
+            position: absolute;
+            left: 0;
+            width: auto
+        }
+
+        .blog-nav .blog-user a:nth-child(2), .blog-nav .blog-user a:nth-child(3) {
+            display: inline-block
+        }
+
+        .blog-nav .blog-navicon {
+            display: none
+        }
+
+        .blog-nav-left {
+            display: none !important
+        }
+    }
+    .child-nav {
+        margin: 15px 0;
+        text-align: center;
+        height: 39px;
+        background: #fff;
+        border-bottom: 1px solid #5fb878
+    }
+
+    .child-nav-btn {
+        padding: 0 20px;
+        width: auto;
+        font-size: 14px;
+        line-height: 40px;
+        display: inline-block;
+        cursor: pointer
+    }
+
+    .child-nav-btn-this {
+        background: #5fb878;
+        color: #fff
+    }
+
+    .blog-nav-left {
+        top: 65px;
+        border-radius: 0;
+        border-top: 1px solid #5fb878;
+        box-shadow: 0 0 8px #fff
+    }
+
+    .leftIn {
+        -moz-animation: leftIn .5s;
+        -o-animation: leftIn .5s;
+        -webkit-animation: leftIn .5s;
+        animation: leftIn .5s
+    }
+
+    .leftOut {
+        -moz-animation: leftOut .5s;
+        -o-animation: leftOut .5s;
+        -webkit-animation: leftOut .5s;
+        animation: leftOut .5s
+    }
+
+    @media (min-width: 992px) {
+        .blog-nav-left {
+            display: none !important
+        }
+    }.blog-mask {
+         position: fixed;
+         left: 0;
+         right: 0;
+         top: 65px;
+         bottom: 0;
+         background: rgba(0, 0, 0, .7);
+         z-index: 998
+     }
+
+    .maskIn {
+        -moz-animation: maskFadeIn .5s;
+        -o-animation: maskFadeIn .5s;
+        -webkit-animation: maskFadeIn .5s;
+        animation: maskFadeIn .5s
+    }
+
+    .maskOut {
+        -moz-animation: maskFadeOut .5s;
+        -o-animation: maskFadeOut .5s;
+        -webkit-animation: maskFadeOut .5s;
+        animation: maskFadeOut .5s
+    }
+
+    @media (min-width: 992px) {
+        .blog-mask {
+            display: none
+        }
+    }.blog-share {
+         box-shadow: 0 0 8px #fff;
+         position: fixed;
+         right: 80px;
+         bottom: 15px;
+         background: #393d49;
+         z-index: 999;
+         margin-bottom: 1px;
+         height: 50px
+     }
+
+    .blog-share .blog-share-body {
+        width: 100%;
+        height: 100%
+    }
+
+    .bdsharebuttonbox {
+        height: 100%
+    }
+
+    .bdsharebuttonbox a {
+        float: left;
+        margin: 9px !important;
+        background-position: 0 !important
+    }
+
+    .bdsharebuttonbox .bds_qzone {
+        background: url("../userImages/qzone_32.png") /*tpa=http://www.sanshi30.cn/static/userImages/qzone_32.png*/ no-repeat
+    }
+
+    .bdsharebuttonbox .bds_tsina {
+        background: url("../userImages/weibo_32.png") /*tpa=http://www.sanshi30.cn/static/userImages/weibo_32.png*/ no-repeat
+    }
+
+    .bdsharebuttonbox .bds_weixin {
+        background: url("../userImages/wechat_32.png") /*tpa=http://www.sanshi30.cn/static/userImages/wechat_32.png*/ no-repeat
+    }
+
+    .bdsharebuttonbox .bds_sqq {
+        background: url("../userImages/qq_32.png") /*tpa=http://www.sanshi30.cn/static/userImages/qq_32.png*/ no-repeat
+    }
+
+    .shareIn {
+        -moz-animation: shareIn .5s;
+        -o-animation: shareIn .5s;
+        -webkit-animation: shareIn .5s;
+        animation: shareIn .5s
+    }
+
+    .shareOut {
+        -moz-animation: shareOut .5s;
+        -o-animation: shareOut .5s;
+        -webkit-animation: shareOut .5s;
+        animation: shareOut .5s
+    }
+
+
+
+    @keyframes leftIn {
+        from {
+            left: -200px
+        }
+        to {
+            left: 0
+        }
+    }@-moz-keyframes leftIn {
+         from {
+             left: -200px
+         }
+         to {
+             left: 0
+         }
+     }@-webkit-keyframes leftIn {
+          from {
+              left: -200px
+          }
+          to {
+              left: 0
+          }
+      }@keyframes leftOut {
+           from {
+               left: 0
+           }
+           to {
+               left: -200px
+           }
+       }@-moz-keyframes leftOut {
+            from {
+                left: 0
+            }
+            to {
+                left: -200px
+            }
+        }@-webkit-keyframes leftOut {
+             from {
+                 left: 0
+             }
+             to {
+                 left: -200px
+             }
+         }@keyframes shareIn {
+              from {
+                  right: -200px
+              }
+              to {
+                  right: 80px
+              }
+          }@-moz-keyframes shareIn {
+               from {
+                   right: -200px
+               }
+               to {
+                   right: 80px
+               }
+           }@-webkit-keyframes shareIn {
+                from {
+                    right: -200px
+                }
+                to {
+                    right: 80px
+                }
+            }@keyframes shareOut {
+                 from {
+                     right: 80px
+                 }
+                 to {
+                     right: -200px
+                 }
+             }@-moz-keyframes shareOut {
+                  from {
+                      right: 80px
+                  }
+                  to {
+                      right: -200px
+                  }
+              }@-webkit-keyframes shareOut {
+                   from {
+                       right: 80px
+                   }
+                   to {
+                       right: -200px
+                   }
+               }@keyframes maskFadeIn {
+                    from {
+                        opacity: 0
+                    }
+                    to {
+                        opacity: 1
+                    }
+                }@-moz-keyframes maskFadeIn {
+                     from {
+                         opacity: 0
+                     }
+                     to {
+                         opacity: 1
+                     }
+                 }@-webkit-keyframes maskFadeIn {
+                      from {
+                          opacity: 0
+                      }
+                      to {
+                          opacity: 1
+                      }
+                  }@keyframes maskFadeOut {
+                       from {
+                           opacity: 1
+                       }
+                       to {
+                           opacity: 0
+                       }
+                   }@-moz-keyframes maskFadeOut {
+                        from {
+                            opacity: 1
+                        }
+                        to {
+                            opacity: 0
+                        }
+                    }@-webkit-keyframes maskFadeOut {
+                         from {
+                             opacity: 1
+                         }
+                         to {
+                             opacity: 0
+                         }
+                     }.layui-tab-brief {
+                          background: #fff
+                      }

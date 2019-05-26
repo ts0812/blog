@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="viewport"
+          content="width=device-width,height=device-height,user-scalable=no,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0"/>
+    <title>发现</title>
+    <link href="css/reset.css" type="text/css" rel="stylesheet" />
+    <link href="css/find.css" type="text/css" rel="stylesheet" />
+</head>
+<style>
+    .fall-box .item{
+        float: left;
+        margin-right: 10px;
+    }
+    body{
+        padding-bottom:0px;
+    }
+    .search-wrapper {
+        max-width: 64rem;
+        margin: 0 auto;
+        overflow-x: hidden;
+    }
+    .input-holder{
+        width:80%;
+        height: 50px;
+        border-radius: 50px;
+        background: rgba(0,0,0,0.5);
+        position: relative;
+        margin: 10px auto;
+    }
+    .search-wrapper .input-holder .search-input {
+        width:80%;
+        height: 50px;
+        background: transparent;
+        box-sizing: border-box;
+        border:none;
+        outline:none;
+        opacity: 1;
+        transform: translate(0, 10px);
+        font-family:"Open Sans", Arial, Verdana;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 20px;
+        color:#FFF;
+        transition: all .3s cubic-bezier(0.000, 0.105, 0.035, 1.570);
+        transition-delay: 0.3s;
+        margin-left: 30px;
+        margin-top: -9px;
+    }
+    .search-input::-webkit-input-placeholder {
+        color: #FFF;
+    }
+    .search-input:-moz-placeholder {
+        color: #FFF;
+    }
+    .search-input:-ms-input-placeholder {
+        color: #FFF;
+    }
+    .search-icon {
+        width: 50px;
+        height:50px;
+        border-radius: 30px;
+        position: absolute;
+        background: #FFF;
+        padding:0px;
+        outline:none;
+        z-index: 2;
+        float:right;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        right: 0;
+
+    }
+    .search-wrapper .input-holder .search-icon span {
+        width:22px;
+        height:22px;
+        display: inline-block;
+        vertical-align: middle;
+        position:relative;
+        transform: rotate(45deg);
+        transition: all .4s cubic-bezier(0.650, -0.600, 0.240, 1.650);
+    }
+    .search-wrapper.active .input-holder .search-icon span {
+        transform: rotate(-45deg);
+    }
+    .search-wrapper .input-holder .search-icon span::before,
+    .search-wrapper .input-holder .search-icon span::after {
+        position: absolute;
+        content:'';
+    }
+    .search-wrapper .input-holder .search-icon span::before {
+        width: 4px;
+        height: 11px;
+        left: 9px;
+        top: 18px;
+        border-radius: 2px;
+        background: #974BE0;
+    }
+    .search-wrapper .input-holder .search-icon span::after {
+        width: 14px;
+        height: 14px;
+        left: 0px;
+        top: 0px;
+        border-radius: 16px;
+        border: 4px solid #974BE0;
+    }
+</style>
+<body>
+<div class="search-wrapper active layui-anim  layui-anim-fadein" >
+    <div class="input-holder">
+        <input type="text" class="search-input" placeholder="Type to search" />
+        <button class="search-icon"><span></span></button>
+    </div>
+</div>
+
+
+<div class="container">
+    <!--<nav class="swiper-container nav-container">-->
+        <!--<ul class="swiper-wrapper nav-ul">-->
+            <!--<li class="swiper-slide active-li">-->
+                <!--<a href="javascript:;" class="slide-a">全部</a>-->
+            <!--</li>-->
+            <!--<li class="swiper-slide">-->
+                <!--<a href="javascript:;" class="slide-a">油画</a>-->
+            <!--</li>-->
+            <!--<li class="swiper-slide">-->
+                <!--<a href="javascript:;" class="slide-a">水彩</a>-->
+            <!--</li>-->
+            <!--<li class="swiper-slide">-->
+                <!--<a href="javascript:;" class="slide-a">山水墨画</a>-->
+            <!--</li>-->
+            <!--<li class="swiper-slide">-->
+                <!--<a href="javascript:;" class="slide-a">素描画</a>-->
+            <!--</li>-->
+            <!--<li class="swiper-slide">-->
+                <!--<a href="javascript:;" class="slide-a">油画油画</a>-->
+            <!--</li>-->
+            <!--<li class="swiper-slide">-->
+                <!--<a href="javascript:;" class="slide-a">水彩</a>-->
+            <!--</li>-->
+            <!--<li class="swiper-slide">-->
+                <!--<a href="javascript:;" class="slide-a">艺术画</a>-->
+            <!--</li>-->
+        <!--</ul>-->
+    <!--</nav>&lt;!&ndash;nav-container end&ndash;&gt;-->
+    <aside class="fall-box grid">
+
+    </aside>
+
+</div>
+<div class="more-n">
+</div>
+<script src="layui/layui.all.js"></script>
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/common.js"></script>
+<script src="js/music-list.js"></script>
+</body>
+</html>

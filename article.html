@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+<title></title>
+<meta name="keywords" content="3">
+<meta name="description" content="1">
+<meta itemprop="image" content="2" />
+
+<link href="css/global.css" rel="stylesheet">
+</head>
+<style>
+    body{
+        margin: 0px;
+        padding: 0px;
+    }
+    .mainContent {
+        background: #E8E5DD;
+        max-width: 960px;
+        overflow: hidden;
+        margin: 0 auto;
+    }
+    .blogitem {
+        background: #fff;
+    }
+    .blogitem article {
+        /*border-bottom: #F4F3EF 40px solid;*/
+    }
+    .title {
+        color: #a6a6a6;
+        background: url(images/titlebg.png) no-repeat 5% 80%;
+        font-size: 20px;
+        line-height: 28px;
+        display: inline-block;
+        padding: 38px 60px 10px 100px;
+        border-bottom: 1px solid #e2e2e2;
+        width: 100%;
+    }
+    @media (max-width: 520px) {
+        .title{
+            padding-left: 60px;
+        }
+    }
+    .text {
+        font-size: 14px;
+        padding: 20px 40px;
+    }
+    .textfoot {
+        padding: 20px 60px;
+        border-top: 1px solid #ddd  cdb;
+        text-align: right;
+        box-shadow: #999 2px 2px 3px;
+    }
+</style>
+<script src="js/common.js"></script>
+<script src="js/jquery-2.1.4.min.js"></script>
+<body>
+
+
+ <div class="mainContent">
+
+    <div class="blogitem">
+      <article>
+        <h2 class="title"></h2>
+        <div class="content">
+        </div>
+        <!--<div class="textfoot">-->
+           <!--<a href="/" target="_blank">阅读全文</a><a href="#">评论</a><a href="#">转载</a>-->
+        <!--</div>-->
+      </article> 
+    </div>
+ </div>
+ <script type="application/javascript" src="js/article.js"></script>
+ <script>
+     window.onload=function () {
+         var system = {
+             win: false,
+             mac: false,
+             xll: false
+         };
+         //检测平台
+         var p = navigator.platform;
+         system.win = p.indexOf("Win") == 0;
+         system.mac = p.indexOf("Mac") == 0;
+         system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+         //跳转语句，如果是手机访问就自动跳转到wap.baidu.com页面
+         if (system.win || system.mac || system.xll) {
+
+         }else{
+             $('img').css('max-width',90%);
+         }
+     }
+ </script>
+</body>
+</html>
