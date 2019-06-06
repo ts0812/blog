@@ -1,4 +1,4 @@
-let domainName='http://yii2cms.cn/'; //定义接口域名
+let domainName='http://yii.mybdxc.cn'; //定义接口域名
 //获取url参数
 function getQueryVariable(variable)
 {
