@@ -69,7 +69,7 @@ $(function () {
     let code = getQueryVariable('code');
     let state = getQueryVariable('state');
     if(code && state){
-        let navUrl = 'qqlogin.php';
+        let navUrl = domainName + '/api/login/qq-login';
         $.ajax({
             url: navUrl,
             type: 'get',
