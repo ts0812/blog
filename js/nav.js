@@ -69,16 +69,17 @@ $(function () {
 
     let code = getQueryVariable('code');
     let state = getQueryVariable('state');
+    // set('token',1);
     if(code && state){
-        let navUrl = domainName + '/api/login/qq-login';
+        let navUrl = domainName + '/api/login/qq-login?code=D5E1E566E807DE703CB3714D225119CC&state=dde3e4a9286f629aa117b5b13ce8a8a4';
         $.ajax({
             url: navUrl,
             type: 'get',
             dataType: "json",
-            data:{
-                code:code,
-                state:state
-            },
+            // data:{
+            //     code:code,
+            //     state:state
+            // },
             success: function (data) {
                 if (data.status == 1) {
                     let userData=data.data;
