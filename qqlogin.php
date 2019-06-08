@@ -33,7 +33,7 @@ if($code&&$state){
     //缓存身份
     $url = 'http://yii.mybdxc.cn/api/login/login-by-openid?openid='.$openId;
     $res = Curl::get($url);
-    die(json_encode($res));
+    die($res);
 }else{
     $qc->qq_login();
 }
