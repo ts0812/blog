@@ -1,8 +1,11 @@
 <?php
 require_once("API/qqConnectAPI.php");
+require_once("Curl.php");
+require_once("db.php");
 $code = $_GET['code']??'';
 $state = $_GET['state']??'';
-$qc = new QC();
+//$qc = new QC();
+$_sex = ['未知','男','女'];
 if($code&&$state){
 //获取令牌AccessToken
     $accessToken = $qc->qq_callback();
@@ -10,50 +13,27 @@ if($code&&$state){
     $openId = $qc->get_openid();
     $qc = new QC($accessToken,$openId);
     $info = $qc->get_user_info();
-    var_dump($info);die;
-    $model = User::findOne(['openid'=>$openId]);
+    $sql = 'select *from user where openid='."'D07AE37DAF1E33DD947A165B0CDBD92C'";
+    $userInfo = find($sql);
     //已注册的qq用户
-    if($model){
-        $userinfo = $model->attributes;
-        unset($userinfo['password']);
-        $token = CacheKey::setToken($model->id,$userinfo);
-        if($token){
-            $data = [
-                'token'=>$token,
-                'image'=>$model->image,
-                'nickname'=>$model->nickname
-            ];
-            $this->errCode(1,$data);
-        }
+    if($userInfo){
     }else{  //未注册
-        $qc = new \QC($accessToken,$openId);
+        $qc = new QC($accessToken,$openId);
         $info = $qc->get_user_info();
         if($info &&$info['ret']==0){
-            $model = new User();
-            $model->nickname=$info['nickname']??'';
-            $model->sex=array_search($info['gender'],$model::$_sex)??0;
-            $model->province=$info['province']??'';
-            $model->city=$info['city']??'';
-            $model->age=(int)date('Y')-(int)$info['year'];
-            $model->openid=$openId;
-            $model->image=$info['figureurl_qq_2']??'';
-            if($model->save()){
-                $userinfo = $model->attributes;
-                unset($userinfo['password']);
-                $token = CacheKey::setToken($model->id,$userinfo);
-                if($token){
-                    $data = [
-                        'token'=>$token,
-                        'image'=>$model->image,
-                        'nickname'=>$model->nickname
-                    ];
-                    $this->errCode(1,$data);
-                }
-            }
+            $sex=array_search($info['gender'],$_sex)??0;
+            $age=(int)date('Y')-(int)$info['year'];
+            $sql = "insert user ('nickname','sex','province','city','age','openid','image') 
+            value(".$info['nickname'].",".$sex.",".$info['province'].",".$info['city'].",".$age.",".$openid.",".$info['figureurl_qq_2'].",)";
+            $res = add($sql);
+            if(!$res)
+                return json_encode(['type'=>0,'message'=>'false']);
         }
     }
-    $this->errCode(9999);
+    //缓存身份
+    $url = 'http://yii.mybdxc.cn/api/login/qq-login?openid='.$openId;
+    $res = Curl::get($url);
+    return json_encode($res);
 }else{
     $qc->qq_login();
 }
-?>
