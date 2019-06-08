@@ -56,7 +56,7 @@ $(function () {
                     txt += "<li class='layui-nav-item layui-thiss'><a class='nav-url' onclick=\"goUrl(this)\" url='" + navData[i].url + "'><i class='layui-icon " + navData[i].icon + "'></i>&nbsp;" + navData[i].title + "</a></li>";
                 }
                 //let navTxt = "<nav id='h' class='blog-nav layui-header'><div class='blog-container'><a class='blog-user qqlianxi' name='qqlianxi' qq='1352645017'> <i class='layui-icon layui-icon-login-qq layui-bg-black' id='QQlogin' style='font-size: 35px;'></i></i></a> <a class='blog-logo' href='index.html'>知音</a> <ul class='layui-nav' lay-filter='nav'> " + txt + "<li class='layui-nav-item'> <span class='layui-nav-bar'></spcan> </ul> <a class='blog-navicon' onclick=\"apply()\"> <i class='layui-icon layui-icon-app'></i> </a> </div> </nav> <ul class='layui-nav layui-nav-tree layui-nav-side blog-nav-left leftOut layui-hide' lay-filter='nav'> " + txt + "<span class='layui-nav-bar'></span> </ul> <div class='blog-mask animated leftOut layui-hide' onclick=\"apply()\"></div>";
-                let navTxt = "<nav id='h' class='blog-nav layui-header'><div class='blog-container'><a class='blog-user' href='qqlogin.php'> <i class='layui-icon layui-icon-login-qq layui-bg-black' id='QQlogin' style='font-size: 35px;'></i></i></a> <a class='blog-logo' href='index.html'>知音</a> <ul class='layui-nav' lay-filter='nav'> " + txt + "<li class='layui-nav-item'> <span class='layui-nav-bar'></spcan> </ul> <a class='blog-navicon' onclick=\"apply()\"> <i class='layui-icon layui-icon-app'></i> </a> </div> </nav> <ul class='layui-nav layui-nav-tree layui-nav-side blog-nav-left leftOut layui-hide' lay-filter='nav'> " + txt + "<span class='layui-nav-bar'></span> </ul> <div class='blog-mask animated leftOut layui-hide' onclick=\"apply()\"></div>";
+                let navTxt = "<nav id='h' class='blog-nav layui-header'><div class='blog-container'><a class='blog-user' href='qqlogin.php'> <i class='layui-icon layui-icon-login-qq layui-bg-black' id='QQlogin' style='font-size: 35px;'></i></i></a> <a class='blog-logo' href='http://yii.mybdxc.cn/api/login/qq-login'>知音</a> <ul class='layui-nav' lay-filter='nav'> " + txt + "<li class='layui-nav-item'> <span class='layui-nav-bar'></spcan> </ul> <a class='blog-navicon' onclick=\"apply()\"> <i class='layui-icon layui-icon-app'></i> </a> </div> </nav> <ul class='layui-nav layui-nav-tree layui-nav-side blog-nav-left leftOut layui-hide' lay-filter='nav'> " + txt + "<span class='layui-nav-bar'></span> </ul> <div class='blog-mask animated leftOut layui-hide' onclick=\"apply()\"></div>";
 
                 $('body').prepend(navTxt);
             }
@@ -65,6 +65,30 @@ $(function () {
             alert('error');
         }
     })
+    let code = getQueryVariable('code');
+    let state = getQueryVariable('state');
+    if(code && state){
+        let navUrl = domainName + '/api/login/qq-login';
+        $.ajax({
+            url: navUrl,
+            type: 'get',
+            dataType: "json",
+            data:{
+                code:code,
+                state:state
+            },
+            success: function (data) {
+                console.log(data);
+                return ;
+                if (data.status == 1) {
+
+                }
+            },
+            error: function () {
+                alert('error');
+            }
+        })
+    }
 })
     $(".blog-navicon").click(function () {
         apply();
