@@ -28,7 +28,7 @@ function getStorage(key,exp='7*24*60*60*1000') {
         return false;
     } else {
         var dataObjDatatoJson = JSON.parse(dataObj.data)
-        return dataObjDatatoJson;
+        return dataObjDatatoJson['data'];
     }
 }
 //删除缓存
