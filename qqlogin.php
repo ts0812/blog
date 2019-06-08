@@ -13,7 +13,7 @@ if($code&&$state){
     $openId = $qc->get_openid();
     $qc = new QC($accessToken,$openId);
     $info = $qc->get_user_info();
-    $sql = 'select *from user where openid='."'D07AE37DAF1E33DD947A165B0CDBD92C'";
+    $sql = 'select *from user where openid="'.$openId.'"';
     $userInfo = find($sql);
     //已注册的qq用户
     if($userInfo){
@@ -31,7 +31,7 @@ if($code&&$state){
         }
     }
     //缓存身份
-    $url = 'http://yii.mybdxc.cn/api/login/qq-login?openid='.$openId;
+    $url = 'http://yii.mybdxc.cn/api/login/login-by-openid?openid='.$openId;
     $res = Curl::get($url);
     die(json_encode($res));
 }else{

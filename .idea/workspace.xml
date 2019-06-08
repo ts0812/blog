@@ -66,7 +66,7 @@
         <entry file="file://$PROJECT_DIR$/qqlogin.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="504">
-              <caret line="29" column="66" selection-start-line="29" selection-start-column="66" selection-end-line="29" selection-end-column="66" />
+              <caret line="35" selection-start-line="35" selection-end-line="35" />
             </state>
           </provider>
         </entry>
@@ -83,7 +83,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
+            <state relative-caret-position="1249">
               <caret line="40" column="12" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="12" />
             </state>
           </provider>
@@ -179,12 +179,12 @@
       <workItem from="1559741740671" duration="3872000" />
       <workItem from="1559779126656" duration="8536000" />
       <workItem from="1559870034314" duration="1197000" />
-      <workItem from="1559957998515" duration="20505000" />
+      <workItem from="1559957998515" duration="21715000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34110000" />
+    <option name="totallyTimeSpent" value="35320000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -302,17 +302,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="40" column="12" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/json/json.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-793">
           <caret line="89" column="9" selection-start-line="89" selection-start-column="9" selection-end-line="89" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1249">
+          <caret line="40" column="12" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -326,7 +326,7 @@
     <entry file="file://$PROJECT_DIR$/qqlogin.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
-          <caret line="29" column="66" selection-start-line="29" selection-start-column="66" selection-end-line="29" selection-end-column="66" />
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
         </state>
       </provider>
     </entry>
