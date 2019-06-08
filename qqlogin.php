@@ -4,7 +4,7 @@ require_once("Curl.php");
 require_once("db.php");
 $code = $_GET['code']??'';
 $state = $_GET['state']??'';
-//$qc = new QC();
+$qc = new QC();
 $_sex = ['未知','男','女'];
 if($code&&$state){
 //获取令牌AccessToken
@@ -27,7 +27,7 @@ if($code&&$state){
             value(".$info['nickname'].",".$sex.",".$info['province'].",".$info['city'].",".$age.",".$openid.",".$info['figureurl_qq_2'].",)";
             $res = add($sql);
             if(!$res)
-                return json_encode(['type'=>0,'message'=>'false']);
+                return json_encode(['status'=>0,'message'=>'false']);
         }
     }
     //缓存身份
