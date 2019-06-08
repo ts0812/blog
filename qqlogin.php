@@ -27,13 +27,13 @@ if($code&&$state){
             value(".$info['nickname'].",".$sex.",".$info['province'].",".$info['city'].",".$age.",".$openid.",".$info['figureurl_qq_2'].",)";
             $res = add($sql);
             if(!$res)
-                return json_encode(['status'=>0,'message'=>'false']);
+                die(json_encode(['status'=>0,'message'=>'false']));
         }
     }
     //缓存身份
     $url = 'http://yii.mybdxc.cn/api/login/qq-login?openid='.$openId;
     $res = Curl::get($url);
-    return json_encode($res);
+    die(json_encode($res));
 }else{
     $qc->qq_login();
 }
