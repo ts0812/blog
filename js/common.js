@@ -12,11 +12,12 @@ function getQueryVariable(variable)
 }
 
 //封装过期控制代码
-function set(key,value){
+function setStorage(key,value){
     var curTime = new Date().getTime();
     localStorage.setItem(key,JSON.stringify({data:value,time:curTime}));
 }
-function get(key,exp) {
+//获取缓存 默认七天
+function getStorage(key,exp='7*24*60*60*1000') {
     var data = localStorage.getItem(key);
     if(!data)
         return false;
@@ -29,6 +30,13 @@ function get(key,exp) {
         var dataObjDatatoJson = JSON.parse(dataObj.data)
         return dataObjDatatoJson;
     }
+}
+//删除缓存
+function delStorage(key) {
+    var data = localStorage.getItem(key);
+    if(!data)
+        return false;
+    localStorage.removeItem(key);
 }
 // //流量统计
 //     var hm = document.createElement("script");
