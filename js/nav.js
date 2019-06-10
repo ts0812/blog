@@ -132,7 +132,7 @@ function touxiang() {
             dataType: "json",
             success: function (data) {
                 if (data.status == 1) {
-                    window.location.reload();
+                    location.href = 'index.html';
                 }else{
                     layer.msg(data.message);
                 }
