@@ -27,8 +27,8 @@ function getStorage(key,exp='7*24*60*60*1000') {
         console.log('身份已过期');
         return false;
     } else {
-        var dataObjDatatoJson = JSON.parse(dataObj.data)
-        return dataObjDatatoJson['data'];
+        var dataObjDatatoJson = dataObj.data
+        return dataObjDatatoJson;
     }
 }
 //删除缓存

@@ -43,7 +43,6 @@ var $ = layui.$ //由于layer弹层依赖jQuery，所以可以直接得到
 
 $(function () {
     let user = getStorage('user'); //缓存身份
-    console.log(user);
     let navUrl = domainName + '/api/blog/nav';
     $.ajax({
         url: navUrl,
@@ -59,7 +58,7 @@ $(function () {
                 }
                 //let navTxt = "<nav id='h' class='blog-nav layui-header'><div class='blog-container'><a class='blog-user qqlianxi' name='qqlianxi' qq='1352645017'> <i class='layui-icon layui-icon-login-qq layui-bg-black' id='QQlogin' style='font-size: 35px;'></i></i></a> <a class='blog-logo' href='index.html'>知音</a> <ul class='layui-nav' lay-filter='nav'> " + txt + "<li class='layui-nav-item'> <span class='layui-nav-bar'></spcan> </ul> <a class='blog-navicon' onclick=\"apply()\"> <i class='layui-icon layui-icon-app'></i> </a> </div> </nav> <ul class='layui-nav layui-nav-tree layui-nav-side blog-nav-left leftOut layui-hide' lay-filter='nav'> " + txt + "<span class='layui-nav-bar'></span> </ul> <div class='blog-mask animated leftOut layui-hide' onclick=\"apply()\"></div>";
                 if(user)
-                    image = "<a class='blog-user'> <img src='"+user['image']+"'/></a>";
+                    image = "<a class='blog-user'><img class='touxiang' src='"+user.image+"'/></a>";
                 else
                     image = "<a class='blog-user' href='qqlogin.php'> <i class='layui-icon layui-icon-login-qq layui-bg-black' id='QQlogin' style='font-size: 35px;'></i></i></a>";
                 let navTxt = "<nav id='h' class='blog-nav layui-header'><div class='blog-container'>"+image+ "<a class='blog-logo' href='index.html'>知音</a> <ul class='layui-nav' lay-filter='nav'> " + txt + "<li class='layui-nav-item'> <span class='layui-nav-bar'></spcan> </ul> <a class='blog-navicon' onclick=\"apply()\"> <i class='layui-icon layui-icon-app'></i> </a> </div> </nav> <ul class='layui-nav layui-nav-tree layui-nav-side blog-nav-left leftOut layui-hide' lay-filter='nav'> " + txt + "<span class='layui-nav-bar'></span> </ul> <div class='blog-mask animated leftOut layui-hide' onclick=\"apply()\"></div>";
@@ -91,7 +90,8 @@ $(function () {
                 if (data.status == 1) {
                     let userData=data.data;
                     setStorage('user',userData);
-                    layer.msg(data.message);
+		    window.location.reload();
+                   // layer.msg(data.message);
                     // window.history.back(-1); //回到上一个页面
                 }else{
                     layer.msg(data.message);

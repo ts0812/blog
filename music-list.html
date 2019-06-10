@@ -10,6 +10,22 @@
     <link href="css/find.css" type="text/css" rel="stylesheet" />
 </head>
 <style>
+   
+ *{
+        -webkit-touch-callout:none;  /*系统默认菜单被禁用,禁止移动web长按弹出菜单*/
+        -webkit-user-select:none; /*webkit浏览器*/
+        -khtml-user-select:none; /*早期浏览器*/
+        -moz-user-select:none; /*火狐*/
+        -ms-user-select:none;  /*IE10*/
+        user-select:none;
+    }
+
+    Element {-webkit-user-select:none;
+        -moz-user-select:none;
+        -khtml-user-select:none;
+        user-select:none;
+    }
+
     .fall-box .item{
         float: left;
         margin-right: 10px;
