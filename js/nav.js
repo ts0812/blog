@@ -37,12 +37,9 @@
 // document.writeln("</ul>");
 // document.writeln("<div class=\'blog-mask animated leftOut layui-hide\'></div>");
 
-
 var $ = layui.$ //由于layer弹层依赖jQuery，所以可以直接得到
-
-
+let user = getStorage('user'); //缓存身份
 $(function () {
-    let user = getStorage('user'); //缓存身份
     let navUrl = domainName + '/api/blog/nav';
     $.ajax({
         url: navUrl,
@@ -90,7 +87,7 @@ $(function () {
                 if (data.status == 1) {
                     let userData=data.data;
                     setStorage('user',userData);
-		    window.location.reload();
+		            window.location.reload();
                    // layer.msg(data.message);
                     // window.history.back(-1); //回到上一个页面
                 }else{
@@ -115,7 +112,38 @@ $(function () {
             apply();
         }
     })
-//
+// layer.open({
+//     type: 2,
+//     skin: 'layui-layer-demo', //样式类名
+//     title:'用户信息',
+//     closeBtn: 1, //不显示关闭按钮
+//     anim: 2,
+//     shadeClose: true, //开启遮罩关闭
+//     content: 'index-list.html'
+// });
+//点击用户头像
+$('.touxiang').click(function () {
+    let logoutUrl = domainName + '/api/login/logout?token='+user.token;
+    layer.confirm('是否退出账号？', function () {
+        delStorage('user'); //删除身份缓存
+        $.ajax({
+            url: logoutUrl,
+            type: 'get',
+            dataType: "json",
+            success: function (data) {
+                if (data.status == 1) {
+                    window.location.reload();
+                }else{
+                    layer.msg(data.message);
+                }
+            },
+            error: function () {
+                layer.msg('error');
+            }
+        })
+    });
+})
+//iframe跳转
 function goUrl(a) {
     $('.layadmin-iframe').attr('src',$(a).attr('url'));
     if($(a).parent().parent().is('.blog-nav-left')){
