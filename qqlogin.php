@@ -23,8 +23,8 @@ if($code&&$state){
         if($info &&$info['ret']==0){
             $sex=array_search($info['gender'],$_sex)??0;
             $age=(int)date('Y')-(int)$info['year'];
-            $sql = "insert user ('nickname','sex','province','city','age','openid','image') 
-            value(".$info['nickname'].",".$sex.",".$info['province'].",".$info['city'].",".$age.",".$openid.",".$info['figureurl_qq_2'].",)";
+            $sql = "insert into user (`nickname`,`sex`,`province`,`city`,`age`,`openid`,`image`) 
+            value('".$info['nickname']."',".$sex.",'".$info['province']."','".$info['city']."',".$age.",'".$openId."','".$info['figureurl_qq_2']."')";
             $res = add($sql);
             if(!$res)
                 die(json_encode(['status'=>0,'message'=>'false']));
