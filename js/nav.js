@@ -87,9 +87,9 @@ $(function () {
                 if (data.status == 1) {
                     let userData=data.data;
                     setStorage('user',userData);
-                    location.href = 'index.html';
+                    // location.href = 'index.html';
                     // layer.msg(data.message);
-                    // window.history.back(-1); //回到上一个页面
+                    window.history.back(-1); //回到上一个页面
                 }else{
                     layer.msg(data.message);
                 }
