@@ -1,0 +1,174 @@
+//在LESS中，你既可以导入CSS文件，也可以导入LESS文件。
+//但只有导入的LESS文件才会被处理（编译），
+//导入的CSS文件会保持原样。如果你希望导入一个CSS文件，保留.css后缀即可：
+@import "../css/layout.css";
+//常量的定义
+@100hw : 100%;
+@zero : 0;
+@colorOfEEE : #eee;
+@colorOf2e2e2e : #2e2e2e;
+@70px : 70px;
+@urlImg : '/img/uiBtn.jpg';
+@selector : qqMain;
+.floatAndRaduis (@direction:left){
+    float: @direction;
+}
+html,body{
+    margin: @zero;
+    padding: @zero;
+    width: @100hw;
+    height: @100hw;
+}
+p{
+    margin: @zero;
+    padding: @zero;
+}
+//如果需要在选择器中使用 LESS 变量，只需通过使用和字符串插件一样的 @{selector} 即可，例如：
+#@{selector}{
+    width: @100hw;
+    height: @100hw;
+    //background-image: linear-gradient(white, gray);
+    background-image: -webkit-linear-gradient(top, @colorOfEEE, @colorOf2e2e2e);
+}
+//
+.img{
+    margin:@zero auto;
+    width:@100hw;
+    height:auto;
+    overflow:hidden;
+    position: absolute;
+    top: 5%;
+    text-align: center;
+    //嵌套的使用---注意不可以带有外部父元素的标识 如.img img{}
+    //LESS 中的作用域跟其他编程语言非常类似，首先会从本地查找变量或者混合模块，如果没找到的话会去父级作用域中查找，直到找到为止
+    img{
+    margin:0 auto;
+    width:60%;
+    height:auto;
+    overflow:hidden;
+    top: 5%;
+    text-align: center;
+    display: block;
+    }
+    .centerCircle{
+        width: @70px * 3/7;
+        height: @70px * 3/7;
+        position: absolute;
+        top: 42%;
+        margin-left: -20px;
+        border-radius: 50%;
+        background: #fff;
+        border: 5px solid #fff;
+    }
+}
+.rainbow{
+    animation: 6s rainbow infinite linear;
+}    
+@keyframes rainbow {
+  0%{
+      transform:rotate(0deg);
+    }
+  100%{
+      transform:rotate(360deg)
+    }//这里的情况是不可以使用的
+}
+.btnpic{
+    width: (@70px * 4/7);
+    height:(@70px * 4/7);
+    position: absolute;
+    top: @100hw *0.8;
+    left: @100hw *0.5;
+    right: @100hw *0.5;
+    margin-left: -@70px*3/7;
+    border-radius: @70px;
+    background: url('..@{urlImg}');
+    background-size: 300%;
+    //变量可以用像 @{name} 这样的结构，以类似 ruby 和 php 的方式嵌入到字符串中：
+}
+
+//混合的使用
+.now_time{
+    .floatAndRaduis;
+    padding-left: 5px;
+}
+.all_time{
+    .floatAndRaduis(right);
+    padding-right: 5px;
+}
+.time{
+    position: absolute;
+    top: 74%;
+    font-size:13px;
+    color: #fff;
+    font-weight: 400;
+    width: @100hw;
+}  
+.time_progress{
+    position: absolute;
+    top: 77%;
+    width: @100hw;
+}
+.progress{
+    width:@100hw;
+    height:6px;
+    background:#000;
+    position:relative;
+}
+.bar{
+    position:absolute;
+    top:0;
+    left:0;
+    height:6px;
+    background-image: -webkit-linear-gradient(left,red, #09f);
+    display:block;
+    width: 0;
+}
+.btn{
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    position: absolute;
+    top: -6px; 
+}
+.musicName{
+    width: @100hw;
+    height: 50px;
+    margin: 0 auto;
+    text-align: center;
+    position: absolute;
+    top:45%;
+        span{
+            font-size:16px;
+            font-weight: 400;
+            color: #fff;
+        }
+}
+#musicContent{
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    height: 150px;
+    overflow-y:scroll;
+    left: 50%;
+    right: 50%;
+    margin-left: -40%;
+    span{
+        width: @100hw;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 400;
+        display: block;
+    } 
+    .musicContent01,.musicContent03{
+        color: #fff;
+    }
+    .musicContent02{
+        color:steelblue;
+    }  
+}
+
+

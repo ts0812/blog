@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"> 
+
+		<meta itemprop="name" content="去撩小哥哥" />  <!-- 分享标题 -->
+		<meta itemprop="keywords" content="去撩小哥哥" />  <!-- 分享标题 -->
+		<meta itemprop="description" content=""/>	<!-- 分享内容 -->
+	    <script src="js/jquery.js"></script>
+	    <style type="text/css">
+	    html,body{
+	    	padding: 0px;
+	    	margin: 0px;
+	    		    	width: 100%;
+    height: 100%;
+	    }
+	    body{
+
+	    }
+	    .box{
+	    	position: fixed;
+		    margin: 5%;
+		    width: 90%;
+		    height: 94%;
+		    background: #FAFAFA;
+		    background: rgba(255,255,255,0.5);
+		    border: 1px #DDD solid;
+		    border-radius: 15px;
+		    -webkit-box-shadow: 1px 5px 8px #888888;
+		    -moz-box-shadow: 1px 5px 8px #888888;
+		    box-shadow: 1px 5px 8px #888888;
+	    }
+	    .content{
+	    	width: 90%;
+	    	
+	    	margin: 50px 5%;
+	    	text-align: center;
+
+	    }
+	    h1{
+	    	transition:all 0.1s;
+			text-shadow:1px 1px 1px #bdb453;
+			color: #2b2322;
+	    }
+	    p{
+	    	font-size: 20px;
+	    	margin-top: 5px;
+	    }
+	    .shouzhi{
+	    	width: 60px;
+	    	 position:relative;
+	    	 animation:mymove 5s infinite;
+      -webkit-animation:mymove 5s infinite; /*Safari and Chrome*/
+	    }
+	    @keyframes mymove
+		{
+		   1% {top:0px;}
+		    20%{top:20px;}
+		    50% {top:30px;}
+		    100%{top:0px;}
+		}
+		 
+		@-webkit-keyframes mymove /*Safari and Chrome*/
+		{
+		    1% {top:0px;}
+		    20%{top:20px;}
+		    50% {top:30px;}
+		    100%{top:0px;}
+		}
+		.qqlianxi{
+			display: inline-block;
+			padding: 5px;
+			text-decoration: none;
+		}
+	    </style>
+	    <body >
+	    	<div class="box">
+		    	<div class="content">
+		    		<h1>小空间</h1>
+		    		<div>
+		    			<p>作品更新ing</p>
+		    			<p>...</p>
+		    			<p>请期待</p>
+		    			<p>更多作品</p>
+		    			<p>去撩</p>
+		    			
+		    			<p><img src="icon/shouzhi.png" class="shouzhi"></p>
+		    			<a class="qqlianxi" qq="1352645017" name="qqlianxi"><p style="margin: 0px">&nbsp;小哥哥</p></a>
+		    			
+		    		</div>
+		    		
+		    	</div>
+	    		
+	    	</div>
+
+	    </body>
+	    <script type="text/javascript">
+	    
+	    	var bj = '1920x1080/'+Math.floor(Math.random()*11)+'.jpg';  //随机背景 向下取整
+	    	var url = 'url('+bj+') no-repeat center center fixed';
+	    	$('body').css('background',url);
+	    	$('body').css('background-size','cover');
+	    </script>
+	    <script src="./js/qqlianxi.js"></script>
+</head>
