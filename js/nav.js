@@ -88,7 +88,7 @@ $(function () {
                     let userData=data.data;
                     setStorage('user',userData);
                     location.href = 'index.html';
-                   // layer.msg(data.message);
+                    // layer.msg(data.message);
                     // window.history.back(-1); //回到上一个页面
                 }else{
                     layer.msg(data.message);
@@ -173,6 +173,4 @@ function goUrl(a) {
         $('.blog-mask').removeClass('leftOut');
         $('.blog-mask').removeClass('layui-hide');
     }
-
-
 
