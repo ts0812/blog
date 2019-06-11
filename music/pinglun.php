@@ -4,12 +4,12 @@
     if($_POST){
         $id = post_check($_POST['id']);
         $content = post_check($_POST['content']);
-       
+        $userId = $_POST['userId']??0;
         if($id){
             $sql = 'select *from music where id='.$id ;
             if(find($sql)){
                 $create_time = date("Y-m-d H:i:s");
-                $sql = "insert into comment (content,music_id,create_time) value('".$content."','".$id."','".$create_time."')";
+                $sql = "insert into comment (content,music_id,user_id,create_time) value('".$content."','".$id."''".$userId."',,'".$create_time."')";
                 
                 $res = add($sql);
                 if($res){

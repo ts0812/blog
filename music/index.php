@@ -42,7 +42,7 @@ if($_SESSION['music_user']){
 
     <link rel="stylesheet" href="css/layout.css" />
     <script src="./js/jquery.js"></script>
-    <script type="text/javascript" src="../layer/2.4/layer.js"></script>
+    <script type="text/javascript" src="layer/2.4/layer.js"></script>
     <script type="text/javascript">  <!-- 歌词lrc -->
         var lrc= <?php echo json_encode($music_list['lrc'])?>;
 
@@ -446,6 +446,8 @@ if($_SESSION['music_user']){
 
 
 </script>
+<!--//接入用户身份-->
+<script src="../js/common.js"></script>
 <script type="text/javascript">
     var maxCount = 30;  // 最高字数，这个值可以自己配置
     $("#doc1").on("input propertychange", function() {
@@ -552,6 +554,15 @@ if($_SESSION['music_user']){
         }
     })
     function queding(){
+        //验证身份
+        let user = getStorage('user'); //缓存身份
+        if(!user || !(user.userId)){
+            layer.confirm('登录之后才能评论！',{btn: ['前往登录', '取消'], title: "提示"}, function () {
+                location.href='../qqlogin.php';
+            })
+        }
+        console.log(user);
+        return ;
         if(state == 2){
             layer.msg('已关闭评论');
             return ;
@@ -576,7 +587,7 @@ if($_SESSION['music_user']){
             $.ajax({
                 type: "post",  //提交方式
                 dataType: "json", //数据类型
-                data: 'content='+$("#doc1").val()+'&id='+id,//自定义数据参数，视情况添加
+                data: 'content='+$("#doc1").val()+'&id='+id+'&userId='+user.userId,//自定义数据参数，视情况添加
                 url: "pinglun.php", //请求url
                 success: function (data) { //提交成功的回调函数
                     if(data.code == 'success')
