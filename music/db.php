@@ -44,7 +44,12 @@ function add($sql){
 	$i=mysqli_insert_id($con);//输出上一条插入的数据的id
 	return $i;
 }    
-
+//修改数据
+function update($sql){
+    global $con;
+    $result = mysqli_query($con,$sql);
+    return $result;
+}
 function post_check($post)     
     {    
 

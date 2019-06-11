@@ -22,7 +22,11 @@
    // $_SESSION['zaixian_time'] = $_POST['zaixian_time'];  //测试是否关闭之后传数据到该页面
     $ip = getIP();  //客户访问ip
     $sql = "select *from ip where ip='".$ip."'";
-    $res = select($sql);  
+    $res = select($sql);
+    //更新浏览量 
+    $id=$_POST['id']??0;
+    $sql = "update music set view_num=view_num+1 where id=$id";
+    $result = update($sql);	 
     if($res){  
         $sql = "insert into pv (ip_id,music_id,zaixian_time,jiazai_time,create_time) value('".$res[0]['id']."','".$_POST['id']."','".$_POST['zaixian_time']."','".$_POST['jiazai_time']."','".date('Y-m-d H:i:s')."')";
         $id = add($sql);  //zaixian_time id
@@ -35,6 +39,7 @@
         $id = add($sql);  //zaixian_time id
                  
     }
+   die(1);
   }
    // ip定位地址，返回数组
   function getCity($ip = '',$key='')

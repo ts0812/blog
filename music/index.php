@@ -310,17 +310,18 @@ if($_SESSION['music_user']){
         $id = post_check($_GET['id']);  //db.php函数 过滤
         $sql = 'select *from music where id='.$id ;
 
-        if(find($sql)){
-            $sql_1 = 'select *from comment where music_id='.$id.' order by create_time desc';
+         if(find($sql)){
+            //$sql_1 = 'select *from comment where music_id='.$id.' order by create_time desc';
+            $sql_1 = 'select t2.id,t2.content,t2.create_time,t1.image from comment as t2 LEFT JOIN `user-center`.user as t1  on t2.user_id=t1.id where t2.music_id='.$id.' ORDER BY t2.create_time desc';
             $comment_list = select($sql_1);
-
             foreach($comment_list as $k=>$v){
-
-                echo '<div class="box" style="background-color:'.randomColor().';max-width:'.rand(70, 100).'%"><img src="'.$music_list['small_image'].'" class="touxiang" onerror="this.style.display='."'none'".'"><div class="content" style="color:'."#white".'">'.$v['content'].'</div></div>';
+		$image = $v['image']?:$music_list['small_image'];
+                echo '<div class="box" style="background-color:'.randomColor().';max-width:'.rand(70, 100).'%"><img src="'.$image.'" class="touxiang" onerror="this.style.display='."'none'".'"><div class="content" style="color:'."#white".'">'.$v['content'].'</div></div>';
             }
 
             $result = ['code' => 'success', 'info' => $comment_list ];
         }
+
 
 
         ?>

@@ -9,8 +9,7 @@
             $sql = 'select *from music where id='.$id ;
             if(find($sql)){
                 $create_time = date("Y-m-d H:i:s");
-                $sql = "insert into comment (content,music_id,user_id,create_time) value('".$content."','".$id."''".$userId."',,'".$create_time."')";
-                
+                $sql = "insert into comment (content,music_id,user_id,create_time) value('".$content."','".$id."','".$userId."','".$create_time."')";
                 $res = add($sql);
                 if($res){
                         $result = ['code' => 'success', 'info' => '评论成功' , 'content' => $content];
