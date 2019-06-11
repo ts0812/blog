@@ -35,7 +35,7 @@ $(function(){
                     }
                     let i,txt='';
                     for (i=0;i<length;i++){
-                        txt+='<div class="grid-item item"><a class="url" href="'+indexData[i]['url']+'""><img src="'+indexData[i]['image']+'" class="item-img"  onerror="this.src=\'images/demo2.jpg\'"/> <section class="section-p"> <p class="price-p">'+indexData[i]['title']+'</p> </section> </a> </div>';
+                        txt+='<div class="grid-item item"><a class="url" target="_blank" href="'+indexData[i]['url']+'""><img src="'+indexData[i]['image']+'" class="item-img"  onerror="this.src=\'images/demo2.jpg\'"/> <section class="section-p"> <p class="price-p">'+indexData[i]['title']+'</p> </section> </a> </div>';
                     }
                     if(type){
                         $('.fall-box').html(txt);  //替换
