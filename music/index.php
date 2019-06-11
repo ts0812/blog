@@ -561,8 +561,6 @@ if($_SESSION['music_user']){
                 location.href='../qqlogin.php';
             })
         }
-        console.log(user);
-        return ;
         if(state == 2){
             layer.msg('已关闭评论');
             return ;
