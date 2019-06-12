@@ -561,6 +561,7 @@ if($_SESSION['music_user']){
             layer.confirm('登录之后才能评论！',{btn: ['前往登录', '取消'], title: "提示"}, function () {
                 location.href='../qqlogin.php';
             })
+          return;
         }
         if(state == 2){
             layer.msg('已关闭评论');

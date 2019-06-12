@@ -38,6 +38,53 @@ function delStorage(key) {
         return false;
     localStorage.removeItem(key);
 }
+//设置当天有效cookie
+function setTodayCookie(cname,cvalue){
+	let toTime = new Date(new Date().toLocaleDateString()).getTime()+24*60*60*1000-1;
+	let nowTime = new Date().getTime();
+	let expires = toTime-nowTime;
+	setCookie(cname,cvalue,expires);
+}
+
+//设置cookie
+function setCookie(cname,cvalue,time=0){
+	if(!checkCookie())
+		return false;
+    var d = new Date();
+    d.setTime(d.getTime()+time);
+    var expires = "expires="+d.toGMTString();
+    document.cookie = cname+"="+cvalue+"; "+expires;
+}
+
+//获取cookie
+function getCookie(cname){
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i].trim();
+        if (c.indexOf(name)==0) { return c.substring(name.length,c.length); }
+    }
+    return "";
+}
+
+////删除cookies
+function delCookie(name)
+{
+	var exp = new Date();
+	exp.setTime(exp.getTime() - 1);
+	var cval=getCookie(name);
+	if(cval!=null) document.cookie= name + "="+cval+";expires="+exp.toGMTString();
+}
+//检测浏览器是否支持cookie
+function checkCookie(){
+	if (!navigator.cookieEnabled){
+		alert('浏览器禁用了Cookie,请前往开启！');
+		return false;
+	}
+	return true;
+}
+
+
 // //流量统计
 //     var hm = document.createElement("script");
 //     hm.src = "file:///C:/Users/Administrator/Desktop/blog/js/traffic.js";

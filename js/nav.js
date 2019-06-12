@@ -143,6 +143,19 @@ function touxiang() {
         })
     });
 }
+push();
+//每日推送
+function push(){
+    let pushUrl = domainName + '/api/blog/push';
+    let pushStatus = getCookie('pushStatus');	
+    if(pushStatus)
+	return false;
+    $.get(pushUrl,function(data){
+//	   setTodayCookie('pushStatus',1);		
+	   if(data.data)
+		layer.msg(data.data.content);
+	},'json');
+}
 //iframe跳转
 function goUrl(a) {
     $('.layadmin-iframe').attr('src',$(a).attr('url'));
