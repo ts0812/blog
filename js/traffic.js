@@ -1,7 +1,7 @@
 //加载完毕执行
 // window.onload=function (){
 	//统计请求地址
-	let url = 'http://yii2cms.cn/api/traffic/index';
+	let url = domainName+'/api/traffic/index';
 	//统计当前页面
 	let now_url=window.location.href;
     console.log(now_url);

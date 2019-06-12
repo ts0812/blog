@@ -23,9 +23,11 @@ $(function(){
                         tishi();
                         return;
                     }
-                    let i,txt='';
+                    let i,type='',txt='';
                     for (i=0;i<length;i++){
-                        txt+='<div class="grid-item item"><a class="url" href="article.html?id='+indexData[i]['content_id']+'""><img src="'+indexData[i]['image']+'" class="item-img"  onerror="this.src=\'images/demo2.jpg\'"/> <section class="section-p"> <p class="price-p">'+indexData[i]['title']+'</p> </section> </a> </div>';
+                        if(indexData[i]['type'])
+                            type = '<div class="t-right-new"><p>'+indexData[i]['type']+'</p></div>';
+                        txt+='<div class="grid-item item">'+type+'<a class="url" href="article.html?id='+indexData[i]['content_id']+'""><img src="'+indexData[i]['image']+'" class="item-img"  onerror="this.src=\'images/demo2.jpg\'"/> <section class="section-p"> <p class="price-p">'+indexData[i]['title']+'</p> </section> </a> </div>';
                     }
                     $('.fall-box').append(txt);
                 }

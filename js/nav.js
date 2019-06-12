@@ -149,9 +149,9 @@ function push(){
     let pushUrl = domainName + '/api/blog/push';
     let pushStatus = getCookie('pushStatus');	
     if(pushStatus)
-	return false;
+	    return false;
     $.get(pushUrl,function(data){
-//	   setTodayCookie('pushStatus',1);		
+	   setTodayCookie('pushStatus',1);
 	   if(data.data)
 		layer.msg(data.data.content);
 	},'json');

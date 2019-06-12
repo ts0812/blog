@@ -85,8 +85,8 @@ function checkCookie(){
 }
 
 
-// //流量统计
-//     var hm = document.createElement("script");
-//     hm.src = "file:///C:/Users/Administrator/Desktop/blog/js/traffic.js";
-//     var s = document.getElementsByTagName("script")[0];
-//     s.parentNode.insertBefore(hm, s);
+//流量统计
+    var hm = document.createElement("script");
+    hm.src = "js/traffic.js";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
