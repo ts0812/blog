@@ -143,6 +143,7 @@ function touxiang() {
         })
     });
 }
+
 push();
 //每日推送
 function push(){
@@ -152,8 +153,13 @@ function push(){
 	    return false;
     $.get(pushUrl,function(data){
 	   setTodayCookie('pushStatus',1);
-	   if(data.data.content)
-		layer.msg(data.data.content);
+	   if(data.data.content){
+           layer.alert(data.data.content, {
+               title:'每日推送',
+               icon: 1,
+               skin: 'layer-ext-moon'
+           })
+       }
 	},'json');
 }
 //iframe跳转
