@@ -155,8 +155,7 @@ function push(){
 	   setTodayCookie('pushStatus',1);
 	   if(data.data.content){
            layer.alert(data.data.content, {
-               title:'每日推送',
-               icon: 1,
+               title:data.data.label,
                skin: 'layer-ext-moon'
            })
        }
