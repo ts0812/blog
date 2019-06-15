@@ -152,7 +152,7 @@ function push(){
 	    return false;
     $.get(pushUrl,function(data){
 	   setTodayCookie('pushStatus',1);
-	   if(data.data)
+	   if(data.data.content)
 		layer.msg(data.data.content);
 	},'json');
 }
