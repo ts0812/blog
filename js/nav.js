@@ -94,9 +94,9 @@ $(function () {
                     layer.msg(data.message);
                 }
             },
-            error: function () {
-                layer.msg('error');
-            }
+            // error: function () {
+            //     layer.msg('error');
+            // }
         })
     }
 })
@@ -137,9 +137,9 @@ function touxiang() {
                     layer.msg(data.message);
                 }
             },
-            error: function () {
-                layer.msg('error');
-            }
+            // error: function () {
+            //     layer.msg('error');
+            // }
         })
     });
 }
