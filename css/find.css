@@ -33,14 +33,43 @@ body{
 	
 	border-bottom: 2px solid #000;
 }
+.fall-box .item{
+	float: left;
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	margin-top:20px;
+}
+body{
+	padding-bottom:0px;
+}
+.t-right-new {
+	position: absolute;
+	width: 100px;
+	height: 30px;
+	background-color: red;
+	color: white;
+	text-align: center;
+	transform: rotate(-40deg);
+	top: 6px;
+	left: -24px;
+}
+
+.t-right-new p {
+	font-size: 19px;
+	line-height: 30px;
+	margin: 0;
+}
 /*瀑布流*/
 .fall-box{
-  width: 100%;
-  margin: 5% 8px 0px 8px ;
+    width: 100%;
+	display: flex;
+	flex-direction: row;
+	margin-top: 10px;
 }
-.fall-box .item{
-   width: calc((100% - 28px)/2);
-   margin-bottom: 1.5rem;
+.fall-box .box-y{
+	flex: 1;
+	margin: 0 5px;
 }
 /*.fall-box .item:nth-child(1n){
    padding: 3% 1.5% 3% 3%;

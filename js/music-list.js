@@ -34,14 +34,20 @@ $(function(){
                         return;
                     }
                     let i,txt='';
-                    for (i=0;i<length;i++){
-                        txt+='<div class="grid-item item"><a class="url" target="_blank" href="'+indexData[i]['url']+'""><img src="'+indexData[i]['image']+'" class="item-img"  onerror="this.src=\'images/demo2.jpg\'"/> <section class="section-p"> <p class="price-p">'+indexData[i]['title']+'</p> </section> </a> </div>';
-                    }
+                    let box_y = $('.box-y');
                     if(type){
-                        $('.fall-box').html(txt);  //替换
-                        return;
+                        for(i=0;i<box_y;i++)
+                            box_y.eq(i).html(''); //替换
                     }
-                    $('.fall-box').append(txt); //追加
+                    i=0;
+                    var insertDiv = setInterval(function () {
+                        if(i>=length-1)
+                            clearInterval(insertDiv);
+                        txt='<div class="grid-item item"><a class="url" target="_blank" href="'+indexData[i]['url']+'""><img src="'+indexData[i]['image']+'" class="item-img"  onerror="this.src=\'images/demo2.jpg\'"/> <section class="section-p"> <p class="price-p">'+indexData[i]['title']+'</p> </section> </a> </div>';
+                        let minIndex = getHeight(box_y);
+                        box_y.eq(minIndex).append(txt);
+                        i++;
+                    },100);
                 }
             },
             error:function () {
@@ -49,15 +55,40 @@ $(function(){
             }
         })
     }
-
+    //计算瀑布流每行高度，返回最低的index值
+    function getHeight(box_y){
+        let length = box_y.length;
+        if(length==0)
+            return false;
+        let i,j,minIndex=0,minHeight=0;
+        for (i=0;i<length;i++) {
+            let gridItem = box_y.eq(i).children('.grid-item');
+            let gridHeight=0; //行高度
+            if(gridItem.length != 0 ) {
+                for (j = 0; j < gridItem.length; j++) {
+                    gridHeight += gridItem.eq(j).height();
+                }
+            }
+            if(i==0)
+                minHeight = gridHeight;
+            else{
+                if(gridHeight<minHeight){
+                    minHeight = gridHeight;
+                    minIndex=i;
+                }
+            }
+        }
+        return minIndex;
+    }
+    //页数
+    let page=1;
     $(window).scroll(function(){
         var scrollTop = $(this).scrollTop();var scrollHeight = $(document).height();var windowHeight = $(this).height();
         if(scrollTop + windowHeight == scrollHeight){
-            console.log(state);
-            ++i;
+            ++page;
             if(state==0)
                 return false;
-            addContent(i);
+            addContent(page);
         }
     })
     function tishi(){
