@@ -24,12 +24,13 @@ $(function(){
                         return;
                     }
                     let i=0,type='',txt='';
+                    console.log(indexData);
                     var insertDiv = setInterval(function () {
                         if(i>=length-1)
                             clearInterval(insertDiv);
                         if(indexData[i]['type'])
                             type = '<div class="t-right-new"><p>'+indexData[i]['type']+'</p></div>';
-                        txt='<div class="grid-item item">'+type+'<a class="url" target="_blank" href="'+indexData[i]['url']+'""><img src="'+indexData[i]['image']+'" class="item-img"  onerror="this.src=\'images/demo2.jpg\'"/> <section class="section-p"> <p class="price-p">'+indexData[i]['title']+'</p> </section> </a> </div>';
+                        txt='<div class="grid-item item">'+type+'<a class="url" target="_blank" href="article.html?id='+indexData[i]['content_id']+'""><img src="'+indexData[i]['image']+'" class="item-img"  onerror="this.src=\'images/demo2.jpg\'"/> <section class="section-p"> <p class="price-p">'+indexData[i]['title']+'</p> </section> </a> </div>';
                         let box_y = $('.box-y');
                         let minIndex = getHeight(box_y);
                         box_y.eq(minIndex).append(txt);
